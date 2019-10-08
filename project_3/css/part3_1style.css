@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* imported font from google */
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+
+html {
+    background-color: #F6FDFF;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    width: 100vw;
+    background-color: #fff;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 25px;
+    color: black;
+}
+
+h1 {
+
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    color: #13829B;
+}
+
+header>p {
+    /* min-width: 173px; */
+    max-width: 200px;
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: .05em;
+}
+
+main {
+    background-color: #EBFBFF;
+    min-width: 250px;
+    min-height: 248px;
+    margin: 30px;
+    padding: 26px 10px;
+
+    border-radius: 6px;
+}
+
+
+.restaurant_holder {
+    background: rgb(249, 251, 252);
+    padding: 17px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 4px 4px rgba(24, 24, 24, 0.171);
+    margin: 10px 10px;
+
+    max-width: 300px;
+    transition: transform .8s;
+}
+
+.restaurant_location {
+    font-size: .84em;
+    color: grey;
+    margin: 0 0 15px;
+
+}
+
+.restaurant_logo {
+    width: 100%;
+    margin: 0 0 5px;
+    max-width: 100px;
+}
+
+.restaurant_copy {
+    font-size: 1em;
+    color: rgb(16, 85, 94);
+    margin: 0 0 5px;
+    transition: transform .3s;
+
+}
+
+
+/* the main below is an addon to the initial page structure */
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}

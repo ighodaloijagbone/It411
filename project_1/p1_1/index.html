@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/part_1style.css">
+
+    <title>P1_1</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+    </header>
+    <main>
+        <p>Thanks for giving us your birth date</p>
+        <div class="wrap">
+            <h2> You are</h2>
+            <p id="user_age"></p>
+        </div>
+    </main>
+
+    <script>
+        var userInput = prompt('What is your birth date?');
+        //the line of code above collects the users birth date as a string
+        var userBirthDate = new Date(userInput);
+        //the line of code above coverts the input the user gives into a date format
+        var userBirthYear = userBirthDate.getFullYear();
+        //the line of code above extracts the year from the users birth date
+        var todaysDate = new Date();
+        //the line of code above invokes and stores the curent date
+        var currentYear = todaysDate.getFullYear();
+        //the line of code above extracts the year of the current date
+
+        var userAge = currentYear - userBirthYear;
+        //the line of code above subtracts the users birth year from the current date to obtain the users age
+
+        
+
+        document.getElementById("user_age").innerHTML = userAge;
+        //the line of code above takes the users age and puts in a tag within the html document, other wise, the code directly below can be used to display the users age by default.
+        // document.write(userAge);
+        // reference https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+    </script>
+</body>
+
+</html>

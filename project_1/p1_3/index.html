@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/part_3style.css">
+
+    <title>P1_3</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+    </header>
+    <main>
+        <p>Thanks for giving us your three favorite numbers</p>
+        <div class="wrap">
+            <h2> The average of your three favorite numbers is</h2>
+            <p id="user_average"></p>
+        </div>
+    </main>
+
+    <script>
+        var userFavoriteNumber1 = prompt('What is your 1st favorite number?');
+        //the line of code above collects the users 1st favorite number as a string
+
+        var favoriteNumber1 = Number(userFavoriteNumber1);
+        //the line of code above converts the users 1st favorite number to a number data type 
+
+        var userFavoriteNumber2 = prompt('What is your 2nd favorite number?');
+        //the line of code above collects the users 2nd favorite number as a string
+
+        var favoriteNumber2 = Number(userFavoriteNumber2);
+        //the line of code above converts the users 2nd favorite number to a number data type 
+
+        var userFavoriteNumber3 = prompt('What is your 3rd favorite number?');
+        //the line of code above collects the users 3rd favorite number as a string
+
+        var favoriteNumber3 = Number(userFavoriteNumber3);
+        //the line of code above converts the users 3rd favorite number to a number data type 
+
+
+        var userAverage = (favoriteNumber1 + favoriteNumber2 + favoriteNumber3) / 3;
+        //the line of code above finds the average of the 3 numbers
+
+
+    
+
+        document.getElementById("user_average").innerHTML = userAverage;
+        //the line of code above takes the average and puts in a tag within the html document, other wise, the code directly below can be used to display the users average by default.
+        // document.write(userAverage);
+        // reference https://www.w3schools.com/jsref/prop_html_innerhtml.asp
+    </script>
+</body>
+
+</html>

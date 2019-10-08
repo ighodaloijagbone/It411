@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta name="author" content="ighodalo ijagbone">
+    <link rel="stylesheet" href="../css/part3_2style.css">
+
+    <title>P3_2</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+    </header>
+    <main>
+        <p>Thanks for giving us your lucky number</p>
+        <div class="wrap">
+            <h2> Hey!</h2>
+            <p id="message"></p>
+        </div>
+    </main>
+
+    <script>
+        "use strict";
+        $(document).ready(function () {
+            var message = ['This is were George slept', 'Martin made me do this', 'NO PAIN NO GAIN! ',
+                'The eagle has landed', 'Bacon is bae', 'Cubs for the win', 'WINTER IS COMING',
+                'call 911! the party is on fire', 'BYOB', 'drink responsibly'
+            ];
+            var userInput = prompt('What is your lucky number?');
+            if (userInput >= 0) {
+
+
+                var userNumber = Number(userInput);
+                var userLuckyNumber = (userNumber) % message.length;
+                var luckyMessage = message[userLuckyNumber];
+
+                // the code below uses jquery to place the users lucky message in a html tag
+                $("#message").text(luckyMessage);
+
+            } else {
+                alert('Oops! that is not allowed here');
+            }
+        });
+    </script>
+</body>
+
+</html>

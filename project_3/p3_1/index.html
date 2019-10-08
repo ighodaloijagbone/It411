@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/part3_1style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta name="author" content="ighodalo ijagbone">
+    <title>P3_1</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+    </header>
+    <main>
+
+        <section class="restaurant_holder">
+            <figure>
+                <img class="restaurant_logo" src="../images/potbelly_logo.png" alt="potbelly_logo">
+            </figure>
+            <h2 class="restaurant_name"> PotBelly</h2>
+            <p class="restaurant_location">243 S. Wabash</p>
+            <p class="restaurant_copy" id="event_1">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                aspernatur eveniet,
+                modi nisi inventore
+                cupiditate maiores culpa sequi quos ex blanditiis voluptatum ratione delectus, aliquam, ipsam facere
+                alias non? Perferendis!</p>
+        </section>
+
+        <section class="restaurant_holder">
+
+            <figure>
+                <img class="restaurant_logo" src="../images/PandaExpress_logo.png" alt="panda express_logo">
+            </figure>
+            <h2 class="restaurant_name"> Panda Express</h2>
+            <p class="restaurant_location">243 E. Jackson</p>
+            <p class="restaurant_copy" id="event_2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+                aspernatur eveniet,
+                modi nisi inventore
+                cupiditate maiores culpa sequi quos ex blanditiis voluptatum ratione delectus, aliquam, ipsam facere
+                alias non? Perferendis!</p>
+
+        </section>
+    </main>
+
+    <script>
+        "use strict";
+        $(document).ready(function () {
+            // the code below will cause the targeted block element to move upwards from its current position by 10px and change its background colour on mouse enter 
+            $("#event_1").mouseenter(function () {
+
+                $(this).css("transform", "translate(0,-10px)");
+                $(this).css("background", "#F4F9FF");
+            });
+            // the code below will cause the targeted block element to return to the default state on mouse leave
+            $("#event_1").mouseleave(function () {
+                $(this).css("background", "");
+                $(this).css("transform", "");
+            });
+
+            // the code below will cause the targeted block element to change its background color to yellow and its font color to red on click
+            $("#event_2").click(function () {
+                $(this).css("background-color", "yellow");
+                $(this).css("color", "red");
+            });
+            // the code below will cause the targeted block element to change its background color and font color to the default on double click 
+            $("#event_2").dblclick(function () {
+                $(this).css("background-color", "");
+                $(this).css("color", "");
+            });
+
+        });
+    </script>
+</body>
+
+</html>

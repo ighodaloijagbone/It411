@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta name="author" content="ighodalo ijagbone">
+    <link rel="stylesheet" href="../css/part3_3style.css">
+
+    <title>P3_3</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+    </header>
+    <main>
+        <p>Thanks for giving us your favorite words</p>
+        <div class="wrap">
+            <h2> Your favorite words in alphabetic order!</h2>
+
+            <p id="message"></p>
+
+        </div>
+    </main>
+
+    <script>
+        "use strict"
+
+        $(document).ready(function () {
+            var favorite = [];
+
+            do {
+                var userInput = prompt('What is your favorite word? type end to stop');
+                if (userInput != "end")
+                    favorite.push(userInput);
+            } while (userInput != "end")
+            var printWords = favorite.sort();
+            var lists = favorite.join(", ");
+
+            //    the code below uses jquery to place the favorite words in a html tag
+            $("#message").html(lists);
+
+
+        });
+    </script>
+</body>
+
+</html>
