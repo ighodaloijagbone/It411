@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta name="author" content="ighodalo ijagbone">
+    <link rel="stylesheet" href="../css/part4_3style.css">
+
+    <title>P4_3</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+        <button id="btn"> <img class="thanos" src="/images/thanos.svg" alt="thanos icon">Thanos it</button>
+        <p class="instruction">click the button above to reset</p>
+    </header>
+    <main>
+        <p>Keep the clicks coming</p>
+        <div class="wrap">
+            <h2> Click Detective</h2>
+
+            <!-- <p class="msg"></p> -->
+
+        </div>
+    </main>
+
+    <script>
+        "use strict";
+        $(document).ready(function () {
+            var count = 0;
+            $(document).click(function (e) {
+
+                count++;
+                var yKey = e.clientY;
+                var xKey = e.clientX;
+                console.log(count, xKey, yKey);
+                // e.preventDefault;
+                $(".wrap").append(
+                    `<p class = "msg">  <span class="indicator"> ${count} </span> Your mouse was here y(${yKey}), x(${xKey})</p>`
+                );
+
+            });
+            // this block of code is tied to a button called thanos that resets the count and clears any existing mouse event printout
+            $("#btn").click(function (e) {
+                e.stopPropagation();
+                $(".msg").empty();
+                count = 0;
+                $(".msg").removeClass("msg");
+            });
+
+        });
+    </script>
+</body>
+
+</html>

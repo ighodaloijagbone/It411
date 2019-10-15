@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <meta name="author" content="ighodalo ijagbone">
+    <link rel="stylesheet" href="../css/part4_2style.css">
+
+    <title>P4_2</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+    </header>
+    <main>
+        <p>Keep the Keys Coming</p>
+        <div class="wrap">
+            <h2> Hey!</h2>
+            <p id="message"></p>
+            <p id="msg"></p>
+
+        </div>
+    </main>
+
+    <script>
+        "use strict";
+        $(document).ready(function () {
+            var message = ['This is were George slept', 'Martin made me do this', 'NO PAIN NO GAIN! ',
+                'The eagle has landed', 'Bacon is bae', 'Cubs for the win', 'WINTER IS COMING',
+                'call 911! the party is on fire', 'BYOB', 'drink responsibly', 'I repeat drink responsibly'
+            ];
+            var count = 0;
+            var dM = message[count];
+            var long = message.length;
+            $("#message").text(dM);
+
+            $(this).keypress(function (e) {
+                var key = e.which;
+                // console.log(key);
+                // console.log(long);
+                if (count >= 0 && count < long && key != 8 && key != 32 && ((key >= 48 && key <= 57) ||
+                        (key >= 97 && key <= 122))) {
+                    e.preventDefault();
+                    dM = message[count];
+                    $("#message").text(dM);
+                    $("#msg").text('Key ' + key);
+                    $(".wrap").toggleClass('glow');
+                    count++;
+                    // console.log(count);
+                }
+
+                if (count >= long && key != 8 && key != 32 && ((key >= 48 && key <= 57) || (key >= 97 &&
+                        key <= 122))) {
+                            
+                    e.preventDefault();
+                    count = 0;
+                    $(".wrap").toggleClass('glow');
+                }
+                // reference for the keycode ranges keyhttps://makitweb.com/restrict-keyboard-character-input-with-jquery/
+
+            });
+
+        });
+    </script>
+</body>
+
+</html>

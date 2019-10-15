@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/part4_1style.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+   
+    <meta name="author" content="ighodalo ijagbone">
+    <title>P4_1</title>
+</head>
+
+<body>
+    <nav>
+        <img src="../images/sftware_logo.svg" alt="Sftware Logo">
+    </nav>
+    <header>
+        <h1>
+            Welcome <br>
+            to Sftware
+        </h1>
+        <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
+        <button id="btn">Highlight that</button>
+    </header>
+
+    <main>
+
+        <section class="restaurant_holder">
+            <figure>
+                <img class="restaurant_logo" src="../images/potbelly_logo.png" alt="potbelly_logo">
+            </figure>
+            <h2 class="restaurant_name"> PotBelly</h2>
+            <p class="restaurant_location">243 S. Wabash</p>
+            <p class="restaurant_copy" id="event_1">Lorem ipsum dolor sit amet <span class="highlightable"> consectetur
+                    adipisicing elit. Quo
+                    aspernatur eveniet,
+                    modi nisi inventore
+                    cupiditate maiores culpa sequi quos ex blanditiis </span> voluptatum ratione delectus, aliquam,
+                ipsam facere
+                alias non? Perferendis!</p>
+        </section>
+
+        <section class="restaurant_holder">
+
+            <figure>
+                <img class="restaurant_logo" src="../images/PandaExpress_logo.png" alt="panda express_logo">
+            </figure>
+            <h2 class="restaurant_name"> Panda Express</h2>
+            <p class="restaurant_location">243 E. Jackson</p>
+            <p class="restaurant_copy" id="event_2">Lorem ipsum dolor sit amet <span class="highlightable"> consectetur
+                    adipisicing elit. Quo
+                    aspernatur eveniet,
+                    modi nisi inventore
+                    cupiditate maiores culpa sequi quos ex blanditiis </span> voluptatum ratione delectus, aliquam,
+                ipsam facere
+                alias non? Perferendis!</p>
+
+
+        </section>
+
+    </main>
+
+    <script>
+        "use strict";
+
+        $(document).ready(function () {
+            $("#btn").click(function () {
+                if ($(this).text() == "Highlight that") {
+
+                    $('span.highlightable').each(function () {
+                        $(this).toggleClass('highlight');
+                        $("#btn").text("Remove highlight");
+                        $("#btn").css("background-color", "red");
+                    }); // end each		
+                } else {
+                    $('span.highlightable').each(function () {
+                        $(this).toggleClass('highlight');
+                        $("#btn").css("background-color", "");
+                        $("#btn").text("Highlight that");
+                    }); // end each		
+
+
+
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
