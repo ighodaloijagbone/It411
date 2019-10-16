@@ -24,15 +24,16 @@
             to Sftware
         </h1>
         <p>We at Sftware provide you with a free and easy way to customise your favourite items.</p>
-        <button id="btn"> <img class="thanos" src="../images/thanos.svg" alt="thanos icon">Thanos it</button>
+        <button id="btn"> <img class="thanos" src="/project_4/images/thanos.svg" alt="thanos icon">Reset</button>
         <p class="instruction">click the button above to reset</p>
     </header>
+
     <main>
         <p>Keep the clicks coming</p>
+
         <div class="wrap">
             <h2> Click Detective</h2>
-
-            <!-- <p class="msg"></p> -->
+            <p class="g"></p>
 
         </div>
     </main>
@@ -46,6 +47,7 @@
                 count++;
                 var yKey = e.clientY;
                 var xKey = e.clientX;
+                $(".g").text(`Click Count ${count}`);
                 console.log(count, xKey, yKey);
                 // e.preventDefault;
                 $(".wrap").append(
@@ -57,6 +59,7 @@
             $("#btn").click(function (e) {
                 e.stopPropagation();
                 $(".msg").empty();
+                $(".g").empty();
                 count = 0;
                 $(".msg").removeClass("msg");
             });
